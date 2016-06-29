@@ -80,6 +80,7 @@
 #pragma mark -- 开始波动动画
 - (void)startWaveAnimation
 {
+    //相对于NSTimer CADisplayLink更准确,每一帧调用一次.
     self.link = [CADisplayLink displayLinkWithTarget:self selector:@selector(waveAnimation)];
     [self.link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
